@@ -12,31 +12,37 @@ class ItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Expanded(
-          child: Container(
-            padding: const EdgeInsets.all(DEFAULT_PADDING),
-            decoration: BoxDecoration(
-              color: product.color,
-              borderRadius: BorderRadius.circular(16),
+    return GestureDetector(
+      onTap: press,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.all(DEFAULT_PADDING),
+              decoration: BoxDecoration(
+                color: product.color,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Hero(
+                tag: "${product.id}",
+                child: Image.asset(product.image)
+              ),
             ),
-            child: Image.asset(product.image),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: DEFAULT_PADDING / 4),
-          child: Text(
-            product.title,
-            style: TextStyle(color: COLORS['TEXT_LIGHT']),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: DEFAULT_PADDING / 4),
+            child: Text(
+              product.title,
+              style: TextStyle(color: COLORS['TEXT_LIGHT']),
+            ),
           ),
-        ),
-        Text(
-          "\$${product.price}",
-          style: TextStyle(fontWeight: FontWeight.bold)
-        )
-      ],
+          Text(
+            "\$${product.price}",
+            style: TextStyle(fontWeight: FontWeight.bold)
+          )
+        ],
+      ),
     );
   }
 }

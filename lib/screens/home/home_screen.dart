@@ -14,7 +14,7 @@ class Homescreen extends StatelessWidget {
 
   AppBar buildAppBar() {
     return AppBar(
-      backgroundColor: COLORS['APP_BAR'],
+      backgroundColor: Colors.white,
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset("assets/icons/back.svg"),
@@ -22,13 +22,17 @@ class Homescreen extends StatelessWidget {
       ),
       actions: <Widget>[
         IconButton(
-          icon: SvgPicture.asset("assets/icons/search.svg"),
-          color: COLORS['TEXT'],
+          icon: SvgPicture.asset(
+            "assets/icons/search.svg",
+            color: COLORS['TEXT'],
+          ),
           onPressed: () {},
         ),
         IconButton(
-          icon: SvgPicture.asset("assets/icons/cart.svg"),
-          color: COLORS['TEXT'],
+          icon: SvgPicture.asset(
+            "assets/icons/cart.svg",
+            color: COLORS['TEXT'],
+          ),
           onPressed: () {},
         ),
         SizedBox(
